@@ -14,7 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      delivery_plans: {
+        Row: {
+          created_at: string
+          deliveries: string[]
+          depot: string
+          id: string
+          priority: string
+          product: string
+          route_name: string
+          spoilage_risk: number
+          temp_requirement: number
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          deliveries?: string[]
+          depot: string
+          id?: string
+          priority?: string
+          product?: string
+          route_name: string
+          spoilage_risk?: number
+          temp_requirement?: number
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          deliveries?: string[]
+          depot?: string
+          id?: string
+          priority?: string
+          product?: string
+          route_name?: string
+          spoilage_risk?: number
+          temp_requirement?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
