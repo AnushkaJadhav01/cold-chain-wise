@@ -80,7 +80,8 @@ const AISpoilagePrediction = ({ simulationActive }: Props) => {
   const colors = getRiskColor(selected.risk);
 
   return (
-    <div className="bg-gradient-card border border-border rounded-xl p-5">
+    <div className="card-premium p-5 glow-primary relative overflow-hidden">
+      <div className="absolute -top-10 -right-10 w-24 h-24 bg-primary/3 rounded-full blur-2xl pointer-events-none" />
       <div className="flex items-center gap-2 mb-4">
         <Brain className="w-5 h-5 text-primary" />
         <h2 className="text-lg font-semibold text-foreground">AI Spoilage Prediction Engine</h2>

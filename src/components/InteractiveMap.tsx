@@ -90,7 +90,7 @@ const InteractiveMap = ({ depot, cities, optimized, simulationActive, shipments 
   const routeColor = (shipment: Shipment) => getStatusColor(shipment.temp);
 
   return (
-    <div className="bg-gradient-card border border-border rounded-xl p-5 h-full relative overflow-hidden">
+    <div className="card-premium p-5 h-full relative overflow-hidden">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Map className="w-5 h-5 text-primary" />
