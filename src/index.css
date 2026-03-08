@@ -71,12 +71,20 @@
     box-shadow: 0 0 20px hsl(187 85% 53% / 0.15), 0 0 60px hsl(187 85% 53% / 0.05);
   }
 
+  .glow-primary-strong {
+    box-shadow: 0 0 25px hsl(187 85% 53% / 0.25), 0 0 80px hsl(187 85% 53% / 0.08), inset 0 0 20px hsl(187 85% 53% / 0.03);
+  }
+
   .glow-success {
     box-shadow: 0 0 20px hsl(152 69% 45% / 0.15);
   }
 
   .glow-warning {
     box-shadow: 0 0 20px hsl(38 92% 50% / 0.15);
+  }
+
+  .glow-destructive {
+    box-shadow: 0 0 20px hsl(0 72% 51% / 0.2), 0 0 60px hsl(0 72% 51% / 0.06);
   }
 
   .text-gradient-primary {
@@ -86,19 +94,84 @@
     background-clip: text;
   }
 
+  .text-gradient-warm {
+    background: linear-gradient(135deg, hsl(38 92% 50%), hsl(20 90% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .bg-gradient-card {
-    background: linear-gradient(135deg, hsl(222 47% 9%), hsl(222 47% 12%));
+    background: linear-gradient(145deg, hsl(222 47% 9%) 0%, hsl(222 47% 11%) 100%);
+  }
+
+  .bg-gradient-card-hover {
+    background: linear-gradient(145deg, hsl(222 47% 10%) 0%, hsl(222 47% 13%) 100%);
   }
 
   .bg-gradient-hero {
     background: linear-gradient(135deg, hsl(222 47% 6%) 0%, hsl(222 47% 10%) 50%, hsl(187 85% 53% / 0.05) 100%);
   }
 
+  .bg-gradient-premium {
+    background: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 47% 12%) 40%, hsl(187 85% 53% / 0.03) 100%);
+  }
+
   .border-glow {
     border-color: hsl(187 85% 53% / 0.2);
   }
 
+  .border-glow-animated {
+    border-image: linear-gradient(135deg, hsl(187 85% 53% / 0.3), hsl(187 85% 53% / 0.05), hsl(187 85% 53% / 0.3)) 1;
+  }
+
   .animate-pulse-slow {
     animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .card-premium {
+    @apply bg-gradient-card border border-border rounded-xl transition-all duration-300;
+    &:hover {
+      @apply bg-gradient-card-hover border-primary/20;
+      box-shadow: 0 0 30px hsl(187 85% 53% / 0.08), 0 8px 32px hsl(222 47% 6% / 0.5);
+    }
+  }
+
+  .leaflet-container {
+    background: hsl(222 47% 6%) !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: hsl(222 47% 9%) !important;
+    border: 1px solid hsl(222 30% 18%) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 32px hsl(222 47% 4% / 0.6) !important;
+  }
+
+  .leaflet-popup-tip {
+    background: hsl(222 47% 9%) !important;
+  }
+
+  .leaflet-popup-content {
+    margin: 0 !important;
   }
 }
