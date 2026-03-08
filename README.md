@@ -1,73 +1,137 @@
-# Welcome to your Lovable project
+# Cold Chain Wise
 
-## Project info
+AI-powered cold chain logistics optimization platform designed to reduce food and vaccine spoilage through intelligent route planning, predictive analytics, and real-time monitoring.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## Problem
 
-There are several ways of editing your application.
+Cold chain logistics faces significant challenges:
 
-**Use Lovable**
+- 30–40% of food globally is lost due to poor logistics
+- Temperature-sensitive vaccines require strict storage conditions
+- Inefficient delivery routes increase spoilage risk
+- Lack of predictive monitoring leads to delayed interventions
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Cold Chain Wise solves this using AI-powered logistics intelligence.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## Solution
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Cold Chain Wise is a smart decision-support system that helps logistics operators:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+• Predict spoilage risks using AI  
+• Optimize delivery routes dynamically  
+• Monitor temperature-sensitive shipments  
+• Plan logistics operations more efficiently  
 
-Follow these steps:
+The platform provides a centralized dashboard for cold-chain planning and monitoring.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Key Features
 
-# Step 3: Install the necessary dependencies.
-npm i
+### AI Decision Engine
+Predicts risk levels for shipments using environmental and logistics data.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+### Route Optimization
+Suggests optimal delivery routes to minimize delays and spoilage.
 
-**Edit a file directly in GitHub**
+### Real-Time Monitoring Dashboard
+Visual dashboards to track shipment health and operational metrics.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Logistics Planning Tools
+Helps logistics managers schedule and plan cold-chain deliveries.
 
-**Use GitHub Codespaces**
+### Secure Authentication
+User login system for logistics companies to manage delivery plans.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## Technology Stack
 
-This project is built with:
+Frontend  
+React + TypeScript  
+Vite  
+Shadcn UI  
+Recharts for analytics dashboards  
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Backend  
+Supabase Authentication  
+PostgreSQL Database  
 
-## How can I deploy this project?
+Cloud Integration  
+AWS S3 – Cold-chain data storage  
+AWS Lambda – AI prediction engine  
+AWS API Gateway – backend API integration  
+AWS CloudWatch – monitoring and logging  
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Maps & Visualization  
+Leaflet.js for route visualization
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## System Architecture
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Cold Chain Wise uses a modular cloud-based architecture:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Frontend (React Dashboard)  
+→ Logistics planning interface  
+→ Data visualization dashboards  
+
+Backend Services  
+→ Authentication system  
+→ Database for shipment and route data  
+
+AI Layer  
+→ Demand prediction  
+→ Spoilage risk forecasting  
+→ Route optimization logic  
+
+Cloud Infrastructure (AWS)  
+→ Data storage  
+→ Scalable compute services  
+→ Monitoring and logging
+
+---
+
+## Use Cases
+
+Food Supply Chains  
+Optimize transport of perishable goods.
+
+Pharmaceutical Logistics  
+Monitor vaccine distribution routes.
+
+Agricultural Supply Networks  
+Reduce food waste during transport.
+
+---
+
+## Future Improvements
+
+IoT sensor integration for real-time temperature tracking  
+Machine learning models for predictive demand forecasting  
+Automated alerts for spoilage risks  
+Mobile logistics monitoring app  
+
+---
+
+## Demo
+
+Prototype Dashboard:  
+(Add your deployed link here if available)
+
+---
+
+## Project Status
+
+Prototype developed for hackathon demonstration.  
+Focus is on demonstrating AI-powered logistics optimization for cold chain systems.
+
+---
+
+## Author
+
+Developed as part of an AI + Cloud hackathon project.
