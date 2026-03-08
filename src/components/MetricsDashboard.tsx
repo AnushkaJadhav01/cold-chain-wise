@@ -10,7 +10,7 @@ const metrics = [
 
 const MetricsDashboard = () => {
   return (
-    <div className="grid grid-cols-5 gap-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
       {metrics.map((m) => (
         <div key={m.label} className={`bg-gradient-card border ${m.border} rounded-xl p-5 ${m.glow} transition-all hover:scale-[1.02]`}>
           <div className={`w-10 h-10 rounded-lg ${m.bg} flex items-center justify-center mb-3`}>
