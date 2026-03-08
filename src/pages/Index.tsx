@@ -8,6 +8,10 @@ import RiskAnalysis from "@/components/RiskAnalysis";
 import TechnologyPanel from "@/components/TechnologyPanel";
 import AWSArchitecture from "@/components/AWSArchitecture";
 import OptimizedRoute from "@/components/OptimizedRoute";
+import BeforeAfterComparison from "@/components/BeforeAfterComparison";
+import AIInsightsPanel from "@/components/AIInsightsPanel";
+import ColdChainMonitoring from "@/components/ColdChainMonitoring";
+import SavedDeliveryPlans from "@/components/SavedDeliveryPlans";
 
 const Index = () => {
   const [config, setConfig] = useState({
@@ -27,7 +31,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="container py-6 space-y-6">
         {/* Hero */}
         <div className="text-center py-8 bg-gradient-hero rounded-xl border border-border">
@@ -35,7 +39,7 @@ const Index = () => {
             <span className="text-gradient-primary">GAT-RL</span> Cold Chain Intelligence
           </h1>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            AI-driven multi-depot cold chain routing optimization using Graph Attention Networks 
+            AI-driven multi-depot cold chain routing optimization using Graph Attention Networks
             and Reinforcement Learning to reduce spoilage, delays, and energy consumption.
           </p>
         </div>
@@ -44,11 +48,11 @@ const Index = () => {
         <MetricsDashboard />
 
         {/* Main Panel: Planner + Visualization */}
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <div className="lg:col-span-4">
             <DeliveryPlanner onOptimize={handleOptimize} />
           </div>
-          <div className="col-span-8">
+          <div className="lg:col-span-8">
             <RouteVisualization depot={config.depot} cities={config.deliveries} optimized={optimized} />
           </div>
         </div>
@@ -58,14 +62,26 @@ const Index = () => {
           <OptimizedRoute depot={config.depot} cities={config.deliveries} />
         )}
 
+        {/* Before vs After */}
+        <BeforeAfterComparison />
+
+        {/* AI Insights + Cold Chain Monitoring */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <AIInsightsPanel />
+          <ColdChainMonitoring />
+        </div>
+
         {/* Comparison + Risk */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <ComparisonPanel />
           <RiskAnalysis />
         </div>
 
+        {/* Saved Plans */}
+        <SavedDeliveryPlans currentConfig={config} optimized={optimized} />
+
         {/* Technology + AWS */}
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <TechnologyPanel />
           <AWSArchitecture />
         </div>
