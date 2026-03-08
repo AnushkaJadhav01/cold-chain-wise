@@ -184,6 +184,11 @@ const Index = () => {
           )}
         </AnimatePresence>
 
+        {/* AI Decision Engine */}
+        <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6 }}>
+          <AIDecisionEngine simulationActive={simulationActive} />
+        </motion.div>
+
         {/* AI Spoilage Prediction + Alert Feed */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6 }}>
@@ -193,6 +198,11 @@ const Index = () => {
             <RealTimeAlertFeed simulationActive={simulationActive} />
           </motion.div>
         </div>
+
+        {/* Performance Analytics */}
+        <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6 }}>
+          <PerformanceAnalytics simulationActive={simulationActive} />
+        </motion.div>
 
         {/* Before vs After */}
         <motion.div variants={sectionVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.6 }}>
