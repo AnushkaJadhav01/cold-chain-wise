@@ -77,7 +77,8 @@ const RealTimeAlertFeed = ({ simulationActive }: Props) => {
   }, [simulationActive, addAlert]);
 
   return (
-    <div className="bg-gradient-card border border-border rounded-xl p-5">
+    <div className="card-premium p-5 relative overflow-hidden">
+      <div className="absolute -bottom-10 -right-10 w-24 h-24 bg-warning/3 rounded-full blur-2xl pointer-events-none" />
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Bell className="w-5 h-5 text-warning" />

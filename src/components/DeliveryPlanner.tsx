@@ -27,7 +27,7 @@ const DeliveryPlanner = ({ onOptimize }: PlannerProps) => {
   };
 
   return (
-    <div className="bg-gradient-card border border-border rounded-xl p-6 space-y-5">
+    <div className="card-premium p-6 space-y-5 h-full">
       <div className="flex items-center gap-2 mb-1">
         <Route className="w-5 h-5 text-primary" />
         <h2 className="text-lg font-semibold text-foreground">Delivery Planning</h2>
