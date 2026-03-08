@@ -16,6 +16,8 @@ import SavedDeliveryPlans from "@/components/SavedDeliveryPlans";
 import AISpoilagePrediction from "@/components/AISpoilagePrediction";
 import RealTimeAlertFeed from "@/components/RealTimeAlertFeed";
 import SimulationController from "@/components/SimulationController";
+import AIDecisionEngine from "@/components/AIDecisionEngine";
+import PerformanceAnalytics from "@/components/PerformanceAnalytics";
 import { useSimulation } from "@/hooks/useSimulation";
 import { Brain } from "lucide-react";
 
