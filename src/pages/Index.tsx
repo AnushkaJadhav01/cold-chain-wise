@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import DeliveryPlanner from "@/components/DeliveryPlanner";
 import MetricsDashboard from "@/components/MetricsDashboard";
@@ -12,6 +13,7 @@ import BeforeAfterComparison from "@/components/BeforeAfterComparison";
 import AIInsightsPanel from "@/components/AIInsightsPanel";
 import ColdChainMonitoring from "@/components/ColdChainMonitoring";
 import SavedDeliveryPlans from "@/components/SavedDeliveryPlans";
+import { Brain } from "lucide-react";
 
 const Index = () => {
   const [config, setConfig] = useState({
@@ -22,10 +24,16 @@ const Index = () => {
     priority: "Standard",
   });
   const [optimized, setOptimized] = useState(false);
+  const [optimizing, setOptimizing] = useState(false);
 
   const handleOptimize = (newConfig: typeof config) => {
     setConfig(newConfig);
-    setOptimized(true);
+    setOptimized(false);
+    setOptimizing(true);
+    setTimeout(() => {
+      setOptimizing(false);
+      setOptimized(true);
+    }, 2200);
   };
 
   return (
@@ -34,7 +42,12 @@ const Index = () => {
 
       <main className="container py-6 space-y-6">
         {/* Hero */}
-        <div className="text-center py-8 bg-gradient-hero rounded-xl border border-border">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center py-8 bg-gradient-hero rounded-xl border border-border"
+        >
           <h1 className="text-3xl font-bold text-foreground mb-2">
             <span className="text-gradient-primary">GAT-RL</span> Cold Chain Intelligence
           </h1>
@@ -42,48 +55,152 @@ const Index = () => {
             AI-driven multi-depot cold chain routing optimization using Graph Attention Networks
             and Reinforcement Learning to reduce spoilage, delays, and energy consumption.
           </p>
-        </div>
+        </motion.div>
 
         {/* Metrics */}
         <MetricsDashboard />
 
         {/* Main Panel: Planner + Visualization */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <div className="lg:col-span-4">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="lg:col-span-4"
+          >
             <DeliveryPlanner onOptimize={handleOptimize} />
-          </div>
-          <div className="lg:col-span-8">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="lg:col-span-8 relative"
+          >
             <RouteVisualization depot={config.depot} cities={config.deliveries} optimized={optimized} />
-          </div>
+
+            {/* Loading Overlay */}
+            <AnimatePresence>
+              {optimizing && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 flex flex-col items-center justify-center bg-background/80 backdrop-blur-sm rounded-xl z-10"
+                >
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                    className="w-12 h-12 rounded-full border-2 border-primary/20 border-t-primary mb-4"
+                  />
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="flex items-center gap-2"
+                  >
+                    <Brain className="w-4 h-4 text-primary" />
+                    <span className="text-sm font-medium text-foreground">AI Optimizing Route...</span>
+                  </motion.div>
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="text-xs text-muted-foreground mt-2"
+                  >
+                    Analyzing graph attention weights & reward signals
+                  </motion.p>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </div>
 
         {/* Optimized Route */}
-        {optimized && (
-          <OptimizedRoute depot={config.depot} cities={config.deliveries} />
-        )}
+        <AnimatePresence>
+          {optimized && (
+            <motion.div
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              <OptimizedRoute depot={config.depot} cities={config.deliveries} />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Before vs After */}
         <BeforeAfterComparison />
 
         {/* AI Insights + Cold Chain Monitoring */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <AIInsightsPanel />
-          <ColdChainMonitoring />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <AIInsightsPanel />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            <ColdChainMonitoring />
+          </motion.div>
         </div>
 
         {/* Comparison + Risk */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <ComparisonPanel />
-          <RiskAnalysis />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <ComparisonPanel />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            <RiskAnalysis />
+          </motion.div>
         </div>
 
         {/* Saved Plans */}
-        <SavedDeliveryPlans currentConfig={config} optimized={optimized} />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <SavedDeliveryPlans currentConfig={config} optimized={optimized} />
+        </motion.div>
 
         {/* Technology + AWS */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <TechnologyPanel />
-          <AWSArchitecture />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
+          >
+            <TechnologyPanel />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            <AWSArchitecture />
+          </motion.div>
         </div>
 
         {/* Footer */}
