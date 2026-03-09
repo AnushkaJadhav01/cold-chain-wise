@@ -2,136 +2,98 @@
 
 AI-powered cold chain logistics optimization platform designed to reduce food and vaccine spoilage through intelligent route planning, predictive analytics, and real-time monitoring.
 
----
-
-## Problem
-
-Cold chain logistics faces significant challenges:
-
-- 30–40% of food globally is lost due to poor logistics
-- Temperature-sensitive vaccines require strict storage conditions
-- Inefficient delivery routes increase spoilage risk
-- Lack of predictive monitoring leads to delayed interventions
-
-Cold Chain Wise solves this using AI-powered logistics intelligence.
+Cold Chain Wise helps logistics companies make better decisions for transporting temperature-sensitive goods such as food, vaccines, and pharmaceuticals by using AI-driven analytics and cloud-based infrastructure.
 
 ---
 
-## Solution
+# Problem
 
-Cold Chain Wise is a smart decision-support system that helps logistics operators:
+Cold chain logistics faces significant global challenges:
 
-• Predict spoilage risks using AI  
+• **30–40% of food globally is lost** due to inefficient supply chains and poor logistics planning  
+• **Temperature-sensitive vaccines and medicines** require strict storage and transportation conditions  
+• **Inefficient delivery routes** increase delays and spoilage risks  
+• **Limited predictive monitoring** makes it difficult to intervene before losses occur  
+
+Traditional logistics systems rely heavily on manual planning and reactive decision-making.
+
+Cold Chain Wise addresses these issues with **AI-powered logistics intelligence and predictive analytics.**
+
+---
+
+# Solution
+
+Cold Chain Wise is an **AI-powered decision support platform** designed for cold-chain logistics operators.
+
+The system helps logistics teams:
+
+• Predict spoilage risks using AI models  
 • Optimize delivery routes dynamically  
-• Monitor temperature-sensitive shipments  
-• Plan logistics operations more efficiently  
+• Monitor temperature-sensitive shipments through analytics dashboards  
+• Improve planning for cold-chain distribution networks  
 
-The platform provides a centralized dashboard for cold-chain planning and monitoring.
-
----
-
-## Key Features
-
-### AI Decision Engine
-Predicts risk levels for shipments using environmental and logistics data.
-
-### Route Optimization
-Suggests optimal delivery routes to minimize delays and spoilage.
-
-### Real-Time Monitoring Dashboard
-Visual dashboards to track shipment health and operational metrics.
-
-### Logistics Planning Tools
-Helps logistics managers schedule and plan cold-chain deliveries.
-
-### Secure Authentication
-User login system for logistics companies to manage delivery plans.
+The platform provides a **centralized dashboard** where logistics operators can analyze shipment data, evaluate risk levels, and make better operational decisions.
 
 ---
 
-## Technology Stack
+# Key Features
 
-Frontend  
-React + TypeScript  
-Vite  
-Shadcn UI  
-Recharts for analytics dashboards  
+## AI Decision Engine
+Uses predictive analytics to evaluate shipment conditions and estimate spoilage risks based on logistics and environmental data.
 
-Backend  
-Supabase Authentication  
-PostgreSQL Database  
+## Route Optimization
+Suggests optimized delivery routes to reduce delays and maintain cold chain integrity.
 
-Cloud Integration  
-AWS S3 – Cold-chain data storage  
-AWS Lambda – AI prediction engine  
-AWS API Gateway – backend API integration  
-AWS CloudWatch – monitoring and logging  
+## Real-Time Monitoring Dashboard
+Interactive analytics dashboards for monitoring shipment performance and logistics health.
 
-Maps & Visualization  
-Leaflet.js for route visualization
+## Logistics Planning Tools
+Helps supply chain managers schedule and manage cold-chain deliveries efficiently.
+
+## Secure Authentication
+User authentication system allowing logistics companies to securely manage shipment planning and analytics.
 
 ---
 
-## System Architecture
+# Technology Stack & Cloud Architecture
 
-Cold Chain Wise uses a modular cloud-based architecture:
+## Frontend
 
-Frontend (React Dashboard)  
-→ Logistics planning interface  
-→ Data visualization dashboards  
-
-Backend Services  
-→ Authentication system  
-→ Database for shipment and route data  
-
-AI Layer  
-→ Demand prediction  
-→ Spoilage risk forecasting  
-→ Route optimization logic  
-
-Cloud Infrastructure (AWS)  
-→ Data storage  
-→ Scalable compute services  
-→ Monitoring and logging
+• React + TypeScript  
+• Vite (fast frontend tooling)  
+• Shadcn UI for component design  
+• Recharts for logistics analytics dashboards  
 
 ---
 
-## Use Cases
+## Backend Architecture
 
-Food Supply Chains  
-Optimize transport of perishable goods.
+Cold Chain Wise uses a **modular backend architecture** designed for scalable deployment.
 
-Pharmaceutical Logistics  
-Monitor vaccine distribution routes.
+Core components include:
 
-Agricultural Supply Networks  
-Reduce food waste during transport.
-
----
-
-## Future Improvements
-
-IoT sensor integration for real-time temperature tracking  
-Machine learning models for predictive demand forecasting  
-Automated alerts for spoilage risks  
-Mobile logistics monitoring app  
+• API layer for communication between frontend and backend services  
+• Data storage for shipment and logistics datasets  
+• AI processing layer for predictive analytics  
+• Secure authentication and access control  
 
 ---
 
-## Demo
+## Cloud Infrastructure
 
-Prototype Dashboard:  
-(Add your deployed link here if available)
+The system architecture is designed using **:contentReference[oaicite:0]{index=0}** cloud services to support scalable and reliable logistics analytics.
+
+Key cloud services include:
+
+• **:contentReference[oaicite:1]{index=1}** – Storage for cold-chain datasets and analytics outputs  
+• **:contentReference[oaicite:2]{index=2}** – Serverless compute used for AI prediction processing  
+• **:contentReference[oaicite:3]{index=3}** – Secure API communication layer  
+• **:contentReference[oaicite:4]{index=4}** – System monitoring and logging  
+
+This architecture allows the system to process logistics data and scale efficiently as shipment volumes grow.
 
 ---
 
-## Project Status
+# System Architecture
 
-Prototype developed for hackathon demonstration.  
-Focus is on demonstrating AI-powered logistics optimization for cold chain systems.
-
----
-
-## Author
-
-Developed as part of an AI + Cloud hackathon project.
+Cold Chain Wise follows a **cloud-native architecture** designed for scalable logistics intelligence.
